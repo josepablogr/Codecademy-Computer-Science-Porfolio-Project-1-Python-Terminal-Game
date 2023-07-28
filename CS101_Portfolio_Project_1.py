@@ -1,8 +1,4 @@
-#GAME TITLE
-import os
-import random
-import sys
-import string
 from art import *
 
+#GAME TITLE
 tprint("World Cup Trivia")
