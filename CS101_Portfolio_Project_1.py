@@ -90,6 +90,15 @@ dic_qa = {
     "Which was the only debutant country in the 2014 World Cup?\n a) Ivory Coast\n b) Honduras\n c) Cameroon\n d) Bosnia and Herzegovina": "d",
     "Which is the only country to withdraw from the World Cup on the grounds that they were used to playing barefoot, which FIFA did not allow?\n a) Malaysia\n b) Zimbabwe\n c) India\n d) Ghana": "c",
     "What was the official song of the 2010 World Cup in South Africa?\n a) Ole Ole Ole\n b) Waka Waka\n c) The Cup of Life\n d) All Rise for Africa": "b",
-    "Which instrument became world-famous thanks to its association to football in South Africa?\n a) Guitar\n b) Banjo\n c) Didegeridoo\n d) Vuvuzela": "b",
-
+    "Which instrument became world-famous thanks to its association to football in South Africa?\n a) Guitar\n b) Banjo\n c) Didegeridoo\n d) Vuvuzela": "d",
+    "What was the official attendance for the 1950 World Cup Final between Brazil and Uruguay?\n a) 173,850\n b) 190,534\n c) 200,457\n d) 78,838": "a",
+    "How many countries have won the football World Cup on home soil?\n a) None\n b) 5\n c) 6\n d) 8": "b",
+    "Which World Cup had the highest average attendance?\n a) 2006\n b) 2010\n c) 1994\n d) 1998": "c",
+    "Which country has won the most penalty shootouts in their football World Cup history?\n a) Italy\n b) Argentina\n c) Germany\n d) France": "c",
+    "Which was the first team to win three World Cups?\n a) Italy\n b) Brazil\n c) Germany\n d) Argentina": "b",
+    "What percentage of the world population watched the 2010 World Cup Final?\n a) 80%\n b) 30%\n c) 50%\n d) 60%": "c",
+    "Including penalty shootouts, which goalkeeper holds the record for the most penalty saves in a single tournament?\n a) Iker Casillas\n b) Gianluigi Buffon\n c) Sergio Goycochea\n d) Lev Yashin": "c",
+    "Which country has the record for the most successive successful qualifications to the World Cup (without being the host nation or the defending champion)?\n a) Italy\n b) Netherlands\n c) Mexico\n d) Spain": "d",
+    "Which match saw the most amount of goals scored in World Cup history?\n a) Brazil vs Sweden, 1958 Final\n b) Brazil vs Italy, 1982 Semifinal\n c) Austria vs Switzerland, 1954 Quarterfinal\n d) Hungary vs El Salvador, 1982 Group Stage": "c",
+    "Which two countries have played the most matches at the World Cup?\n a) Italy, Brazil\n b) Brazil, Germany\n c) Germany, Spain\n d) Brazil, Spain": "b",
 }
