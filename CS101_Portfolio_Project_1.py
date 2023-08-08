@@ -1,17 +1,18 @@
 from art import *
+from random import *
+
 
 #GAME TITLE
 tprint("World Cup Trivia")
 
 #GREETING MESSAGE
-print("Welcome to the most exciting FIFA World Cup Trivia Game! There will be multiple-choice questions about the biggest sports event. The first player to answer 5 questions correctly wins the game. If there's a tie, a sudden death round takes off. Please enter the players' names.")
+print("Welcome to the most exciting FIFA World Cup Trivia Game! There will be multiple-choice questions about the biggest sports event. The first player to answer 5 questions correctly wins the game. Please enter the players' names.")
 
 #INPUT PLAYERS NAMES
 p1_name = input("P1 Name: ")
 p2_name = input("P2 Name: ")
 
 #DICTIONARY WITH TRIVIA QUESTIONS AND ANSWERS
-
 dic_qa = {
     "Where was the very first World Cup held?\n a) Italy\n b) Uruguay\n c) Brazil\n d) West Germany":"b",
     "What was the fastest goal in World Cup history?\n a) 14.7 seconds\n b) 6.2 seconds\n c) 18.3 seconds\n d) 10.8 seconds":"d",
@@ -100,5 +101,47 @@ dic_qa = {
     "Including penalty shootouts, which goalkeeper holds the record for the most penalty saves in a single tournament?\n a) Iker Casillas\n b) Gianluigi Buffon\n c) Sergio Goycochea\n d) Lev Yashin": "c",
     "Which country has the record for the most successive successful qualifications to the World Cup (without being the host nation or the defending champion)?\n a) Italy\n b) Netherlands\n c) Mexico\n d) Spain": "d",
     "Which match saw the most amount of goals scored in World Cup history?\n a) Brazil vs Sweden, 1958 Final\n b) Brazil vs Italy, 1982 Semifinal\n c) Austria vs Switzerland, 1954 Quarterfinal\n d) Hungary vs El Salvador, 1982 Group Stage": "c",
-    "Which two countries have played the most matches at the World Cup?\n a) Italy, Brazil\n b) Brazil, Germany\n c) Germany, Spain\n d) Brazil, Spain": "b",
+    "Which two countries have played the most matches at the World Cup?\n a) Italy, Brazil\n b) Brazil, Germany\n c) Germany, Spain\n d) Brazil, Spain": "b"
 }
+
+questions = list(dic_qa.keys())
+
+#CREATION OF PLAYER CLASS
+class Player:
+    score = 0
+    def __init__(self, name):
+        self.name = name
+
+p1 = Player(p1_name)
+p2 = Player(p2_name)
+
+#GAME LOOP
+turn = 1
+
+while p1.score < 5 or p2.score < 5:
+    chosen_question = randint(0, len(questions) - 1)
+    if turn % 2 != 0:
+        print("\n" + p1.name + " answer the following question:\n")
+        p1_answer = input(questions[chosen_question] + "\nAnswer: ")
+        if p1_answer.lower() == dic_qa.get(questions[chosen_question]):
+            p1.score += 1
+            print("Your answer is CORRECT!")
+        else:
+            p1.score += 0
+            print("Your answer is INCORRECT")
+    elif turn % 2 == 0:
+        print("\n" + p2.name + " answer the following question:\n")
+        p2_answer = input(questions[chosen_question] + "\nAnswer: ")
+        if p2_answer.lower() == dic_qa.get(questions[chosen_question]):
+            p2.score += 1
+            print("Your answer is CORRECT!")
+        else:
+            p2.score += 0
+            print("Your answer is INCORRECT")
+    questions.remove(questions[chosen_question])
+    turn += 1
+
+if p1.score == 5:
+    print("\nCongratulation " + p1.name + ", you are THE WINNER!")
+elif p2.score == 5:
+    print("\nCongratulation " + p2.name + ", you are THE WINNER!")
