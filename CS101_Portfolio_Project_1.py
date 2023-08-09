@@ -1,6 +1,7 @@
+#MODULES
 from art import *
 from random import *
-
+from termcolor import colored
 
 #GAME TITLE
 tprint("World Cup Trivia")
@@ -125,19 +126,19 @@ while p1.score < 5 or p2.score < 5:
         p1_answer = input(questions[chosen_question] + "\nAnswer: ")
         if p1_answer.lower() == dic_qa.get(questions[chosen_question]):
             p1.score += 1
-            print("Your answer is CORRECT!")
+            print(colored("Your answer is CORRECT!", "green"))
         else:
             p1.score += 0
-            print("Your answer is INCORRECT")
+            print(colored("Your answer is INCORRECT", "red"))
     elif turn % 2 == 0:
         print("\n" + p2.name + " answer the following question:\n")
         p2_answer = input(questions[chosen_question] + "\nAnswer: ")
         if p2_answer.lower() == dic_qa.get(questions[chosen_question]):
             p2.score += 1
-            print("Your answer is CORRECT!")
+            print(colored("Your answer is CORRECT!", "green"))
         else:
             p2.score += 0
-            print("Your answer is INCORRECT")
+            print(colored("Your answer is INCORRECT", "red"))
     questions.remove(questions[chosen_question])
     turn += 1
 
