@@ -112,6 +112,14 @@ class Player:
     score = 0
     def __init__(self, name):
         self.name = name
+    
+    def score_point(self):
+        self.score += 1
+        print(colored("Your answer is CORRECT!", "green"))
+
+    def miss_point(self):
+        self.score += 0
+        print(colored("Your answer is INCORRECT", "red"))
 
 p1 = Player(p1_name)
 p2 = Player(p2_name)
@@ -119,26 +127,23 @@ p2 = Player(p2_name)
 #GAME LOOP
 turn = 1
 
+
 while p1.score < 5 or p2.score < 5:
     chosen_question = randint(0, len(questions) - 1)
     if turn % 2 != 0:
         print("\n" + p1.name + " answer the following question:\n")
         p1_answer = input(questions[chosen_question] + "\nAnswer: ")
         if p1_answer.lower() == dic_qa.get(questions[chosen_question]):
-            p1.score += 1
-            print(colored("Your answer is CORRECT!", "green"))
+            p1.score_point()
         else:
-            p1.score += 0
-            print(colored("Your answer is INCORRECT", "red"))
+            p1.miss_point()
     elif turn % 2 == 0:
         print("\n" + p2.name + " answer the following question:\n")
         p2_answer = input(questions[chosen_question] + "\nAnswer: ")
         if p2_answer.lower() == dic_qa.get(questions[chosen_question]):
-            p2.score += 1
-            print(colored("Your answer is CORRECT!", "green"))
+            p2.score_point()
         else:
-            p2.score += 0
-            print(colored("Your answer is INCORRECT", "red"))
+            p2.miss_point()
     questions.remove(questions[chosen_question])
     turn += 1
 
