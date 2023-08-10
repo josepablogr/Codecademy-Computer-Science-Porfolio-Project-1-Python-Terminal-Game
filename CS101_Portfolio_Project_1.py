@@ -124,10 +124,13 @@ class Player:
 p1 = Player(p1_name)
 p2 = Player(p2_name)
 
+def show_score(name_p1, score_p1, name_p2, score_p2):
+    print("SCORE\n" + 
+          name_p1 + ": " + str(score_p1) + "\n" +
+          name_p2 + ": " + str(score_p2) + "\n")
+
 #GAME LOOP
 turn = 1
-
-#NORMAL MATCH
 
 while (turn < 10) or (p1.score < 5 and p2.score < 5) or (abs(p1.score - p2.score) == 0) or (turn % 2 == 0):
     chosen_question = randint(0, len(questions) - 1)
@@ -138,6 +141,7 @@ while (turn < 10) or (p1.score < 5 and p2.score < 5) or (abs(p1.score - p2.score
             p1.score_point()
         else:
             p1.miss_point()
+        show_score(p1.name, p1.score, p2.name, p2.score)
     elif turn % 2 == 0:
         print("\n" + p2.name + " answer the following question:\n")
         p2_answer = input(questions[chosen_question] + "\nAnswer: ")
@@ -145,10 +149,13 @@ while (turn < 10) or (p1.score < 5 and p2.score < 5) or (abs(p1.score - p2.score
             p2.score_point()
         else:
             p2.miss_point()
+        show_score(p1.name, p1.score, p2.name, p2.score)
     questions.remove(questions[chosen_question])
     turn += 1
 
 if p1.score > p2.score:
-    print("\nCongratulation " + p1.name + ", you are THE WINNER!")
+    tprint("Congratulations!")
+    print("\n" + p1.name + ", YOU ARE THE WINNER!\n")
 elif p2.score > p1.score:
-    print("\nCongratulation " + p2.name + ", you are THE WINNER!")
+    tprint("Congratulations!")
+    print("\n" + p2.name + ", YOU ARE THE WINNER!\n")
