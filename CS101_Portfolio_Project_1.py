@@ -7,7 +7,7 @@ from termcolor import colored
 tprint("World Cup Trivia")
 
 #GREETING MESSAGE
-print("Welcome to the most exciting FIFA World Cup Trivia Game! There will be multiple-choice questions about the biggest sports event. The first player to answer 5 questions correctly wins the game. Please enter the players' names.")
+print("Welcome to the most exciting FIFA World Cup Trivia Game! There will be multiple-choice questions about the biggest sports event. The first player to answer 5 questions correctly wins the game. If there is a tie, a sudden death match takes off. Please enter the players' names.")
 
 #INPUT PLAYERS NAMES
 p1_name = input("P1 Name: ")
